@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/geode_installer">
+        <file>icons/geode.png</file>
+        <file>icons/geode.svg</file>
+        <file>icons/steam.svg</file>
+        <file>icons/wine.svg</file>
+    </qresource>
+</RCC>
