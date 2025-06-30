@@ -1,5 +1,10 @@
 {
   "geode_for_linux": "Geode для Linux",
+  "geode_subtitle": "Добавляет поддержку модов в Geometry Dash!",
   "install": "Установить",
-  "disclaimer": "Сделано с любовью \uD83D\uDC99 от Relative. Не относится официально к Geode SDK."
+  "disclaimer": "Сделано с любовью \uD83D\uDC99 от Relative. Не относится официально к Geode SDK.",
+  "installation_method_title": "Как Вы установили Geometry Dash?",
+  "installation_method_subtitle": "Выберите метод установки:",
+  "steam": "Steam",
+  "wine": "Wine"
 }

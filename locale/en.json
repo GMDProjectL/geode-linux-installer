@@ -1,5 +1,10 @@
 {
   "geode_for_linux": "Geode for Linux",
+  "geode_subtitle": "Bringing mod support to Geometry Dash!",
   "install": "Install",
-  "disclaimer": "Made with \uD83D\uDC99 by Relative. Not affiliated with Geode SDK."
+  "disclaimer": "Made with \uD83D\uDC99 by Relative. Not affiliated with Geode SDK.",
+  "installation_method_title": "How did you install Geometry Dash?",
+  "installation_method_subtitle": "Select the installation method:",
+  "steam": "Steam",
+  "wine": "Wine"
 }

@@ -1,8 +1,7 @@
-import os
-
 from PySide6 import QtCore, QtWidgets, QtGui
 import resources
 import locale
+import common_components
 
 class WelcomePage(QtWidgets.QWidget):
 
@@ -11,34 +10,27 @@ class WelcomePage(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        resources.load_title()
-
         main_vertical_layout = QtWidgets.QVBoxLayout()
 
         top_spacer = QtWidgets.QSpacerItem(1, 1, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Expanding)
         main_vertical_layout.addItem(top_spacer)
 
-        title_horizontal_layout = QtWidgets.QHBoxLayout()
-        title_button = QtWidgets.QPushButton()
-        title_button.setText(" " + locale.i18n_get('geode_for_linux'))
-        title_button.setIcon(resources.resources['icon'])
-        title_button.setIconSize(QtCore.QSize(48, 48))
-        title_button.setStyleSheet("font-size: 28pt; border-radius: 5px;")
-        title_horizontal_layout.addWidget(title_button)
+        main_vertical_layout.addLayout(
+            common_components.construct_title(
+                locale.i18n_get('geode_for_linux'), 'icon'
+            )
+        )
 
-        main_vertical_layout.addLayout(title_horizontal_layout)
+        main_vertical_layout.addWidget(
+            common_components.construct_subtitle(
+                locale.i18n_get('geode_subtitle')
+            )
+        )
 
-        button_horizontal_layout = QtWidgets.QHBoxLayout()
-        start_button = QtWidgets.QPushButton()
-        start_button.setText("➡️  " + locale.i18n_get('install'))
-        start_button.clicked.connect(self.install_clicked)
-        start_button.setStyleSheet("font-size: 12pt; margin-top: 30px;")
-        start_button.setMinimumSize(QtCore.QSize(300, 100))
-        start_button.setMaximumSize(QtCore.QSize(300, 100))
-        start_button.setIcon(QtGui.QIcon())
-
-        button_horizontal_layout.addWidget(start_button)
-        main_vertical_layout.addLayout(button_horizontal_layout)
+        main_vertical_layout.addLayout(
+            common_components.construct_centered_button("➡️  " + locale.i18n_get('install'), None,
+                                                        self.start_button_clicked)
+        )
 
         bottom_spacer = QtWidgets.QSpacerItem(1, 1, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Expanding)
         main_vertical_layout.addItem(bottom_spacer)
