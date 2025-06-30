@@ -12,6 +12,8 @@ def load_strings(locale_name: str):
 def load_system_locale():
     if os.getenv('LANG').startswith('ru_'):
         load_strings('ru')
+    elif os.getenv('LANG').startswith('uk_'):
+        load_strings('uk')
     else:
         load_strings('en')
 
