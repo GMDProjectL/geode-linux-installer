@@ -5,6 +5,7 @@ from pathlib import Path
 from PySide6 import QtCore
 import requests
 import json
+from steam_game_finder import SteamGameFinder
 
 def get_latest_geode_tag() -> str:
     url = 'https://api.geode-sdk.org/v1/loader/versions/latest'
@@ -39,15 +40,6 @@ def unzip_to_destination(zip_url: str, destination_dir: str) -> None:
 def install_to_dir(destination_dir: str) -> None:
     win_zip_release_link = get_download_url()
     unzip_to_destination(win_zip_release_link, destination_dir)
-
-def get_steam_gd_path() -> Path:
-    gd_path = f'{os.getenv('HOME')}/.steam/steam/steamapps/common/Geometry Dash'
-    return Path(gd_path)
-
-def get_steam_gd_prefix() -> Path:
-    pfx_path = f'{os.getenv('HOME')}/.steam/steam/steamapps/compatdata/322170/pfx'
-    return Path(pfx_path)
-
 
 def patch_prefix_registry(reg_file_path: str) -> None:
     # We need to patch Wine registry adding a simple dll override
@@ -111,11 +103,24 @@ def install_geode_to_wine(prefix: Path, gd_path: Path) -> None:
     patch_prefix_registry((prefix / 'user.reg').as_posix())
 
 def install_geode_to_steam():
-    steam_gd_path = get_steam_gd_path()
-    steam_gd_prefix = get_steam_gd_prefix()
+    finder = SteamGameFinder()
+    if not finder.steam_root:
+        raise Exception("Can't find Steam Root: {}".format(finder))
+
+    gd_info = finder.get_game_info("322170")
+
+    if gd_info.get("found") is None:
+        raise Exception("Can't find Geometry Dash.")
+
+    steam_gd_path = Path(gd_info['game_path'])
+
+    if gd_info.get('proton_prefix') is None:
+        raise Exception("Can't find Proton Prefix.")
+
+    steam_gd_prefix = Path(gd_info['proton_prefix'])
 
     if not steam_gd_path.exists():
-        raise Exception("Can't find Steam GD at {}".format(steam_gd_path))
+        raise Exception("Can't find Steam GD at {}.".format(steam_gd_path))
 
     install_geode_to_wine(steam_gd_prefix, steam_gd_path)
 
@@ -132,6 +137,7 @@ class WineInstallationThread(QtCore.QThread):
             install_geode_to_wine(self.wine_prefix, self.gd_path)
             self.finished_signal.emit(True, "Success!")
         except Exception as e:
+            print(e.with_traceback())
             self.finished_signal.emit(False, str(e))
 
 class SteamInstallationThread(QtCore.QThread):
@@ -145,4 +151,5 @@ class SteamInstallationThread(QtCore.QThread):
             install_geode_to_steam()
             self.finished_signal.emit(True, "Success!")
         except Exception as e:
+            print(e.with_traceback())
             self.finished_signal.emit(False, str(e))

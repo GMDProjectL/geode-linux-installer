@@ -16,5 +16,5 @@
   "wine_prefix_is_not_selected": "Wine prefix is not selected.",
   "wine_select_gd_dir": "Now, select your Geometry Dash installation directory.",
   "wine_select_gd_caption": "Select your Geometry Dash directory",
-  "wine_gd_dir_is_not_selected": "Geometry Dash directory prefix is not selected."
+  "wine_gd_dir_is_not_selected": "Geometry Dash directory is not selected."
 }

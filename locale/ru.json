@@ -6,5 +6,15 @@
   "installation_method_title": "Как Вы установили Geometry Dash?",
   "installation_method_subtitle": "Выберите метод установки:",
   "steam": "Steam",
-  "wine": "Wine"
+  "wine": "Wine",
+  "installing_title": "Установка...",
+  "installing_text": "Geode устанавливается в {}, пожалуйста, подождите...",
+  "installation_successful": "Geode успешно установлен!",
+  "installation_failed": "Ошибка установки Geode: {}",
+  "wine_select_prefix": "Ваш префикс Wine {}?",
+  "wine_select_prefix_caption": "Выберите префикс Wine",
+  "wine_prefix_is_not_selected": "Префикс Wine не выбран.",
+  "wine_select_gd_dir": "Теперь, выберите, где находится ваша Geometry Dash.",
+  "wine_select_gd_caption": "Выберите директорию с Geometry Dash",
+  "wine_gd_dir_is_not_selected": "Директория с GD не выбрана."
 }
