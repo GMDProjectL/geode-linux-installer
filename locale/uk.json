@@ -1,3 +1,20 @@
 {
-  "tip": "wip"
+  "geode_for_linux": "Geode для Linux",
+  "geode_subtitle": "Додає підтримку модів в Geometry Dash!",
+  "install": "Встановити",
+  "disclaimer": "Зроблено з любов'ю \uD83D\uDC99 від Relative. Не відноситься офіційно до Geode SDK.",
+  "installation_method_title": "Як Ви встановили Geometry Dash?",
+  "installation_method_subtitle": "Виберіть метод встановлення:",
+  "steam": "Steam",
+  "wine": "Wine",
+  "installing_title": "Встановлення...",
+  "installing_text": "Geode встановлюється в {}, будь ласка, почекайте...",
+  "installation_successful": "Geode успішно встановлений!",
+  "installation_failed": "Помилка встановлення Geode: {}",
+  "wine_select_prefix": "Ваш префикс Wine {}?",
+  "wine_select_prefix_caption": "Виберіть префікс Wine",
+  "wine_prefix_is_not_selected": "Префікс Wine не вибраний.",
+  "wine_select_gd_dir": "Тепер, виберіть, де знаходиться ваша Geometry Dash.",
+  "wine_select_gd_caption": "Виберіть директорію з Geometry Dash",
+  "wine_gd_dir_is_not_selected": "Директорія з GD не вибрана."
 }
