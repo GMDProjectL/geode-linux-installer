@@ -3,10 +3,10 @@ import os
 import sys
 from pathlib import Path
 
-from PySide6 import QtWidgets, QtCore, QtGui
+from PySide6 import QtWidgets, QtCore
 
 from installation_method_page import InstallationMethodPage
-from locale import i18n_get
+from locales import i18n_get
 from welcome_page import WelcomePage
 import resources
 import installation_utils

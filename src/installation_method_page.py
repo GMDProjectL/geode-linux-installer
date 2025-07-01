@@ -1,8 +1,7 @@
 from typing import Callable
 
-from PySide6 import QtCore, QtWidgets, QtGui
-import resources
-import locale
+from PySide6 import QtCore, QtWidgets
+from locales import i18n_get
 import common_components
 
 class InstallationMethodPage(QtWidgets.QWidget):
@@ -20,22 +19,26 @@ class InstallationMethodPage(QtWidgets.QWidget):
 
         main_vertical_layout.addLayout(
             common_components.construct_title(
-                locale.i18n_get('installation_method_title'), 'icon'
+                i18n_get('installation_method_title'), 'icon'
             )
         )
 
         main_vertical_layout.addWidget(
             common_components.construct_subtitle(
-                locale.i18n_get('installation_method_subtitle')
+                i18n_get('installation_method_subtitle')
             )
         )
 
         main_vertical_layout.addLayout(
-            common_components.construct_centered_button(locale.i18n_get('steam'), 'steam', self.steam_button_clicked)
+            common_components.construct_centered_button(
+                i18n_get('steam'), 'steam', self.steam_button_clicked
+            )
         )
 
         main_vertical_layout.addLayout(
-            common_components.construct_centered_button(locale.i18n_get('wine'), 'wine', self.wine_button_clicked)
+            common_components.construct_centered_button(
+                i18n_get('wine'), 'wine', self.wine_button_clicked
+            )
         )
 
         bottom_spacer = QtWidgets.QSpacerItem(1, 1, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Expanding)

@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-import os
-import re
-import struct
 from pathlib import Path
 from typing import Optional, List, Dict, Tuple
 

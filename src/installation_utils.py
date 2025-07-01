@@ -4,8 +4,8 @@ import zipfile
 from pathlib import Path
 from PySide6 import QtCore
 import requests
-import json
 from steam_game_finder import SteamGameFinder
+
 
 def get_latest_geode_tag() -> str:
     url = 'https://api.geode-sdk.org/v1/loader/versions/latest'

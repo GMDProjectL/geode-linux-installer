@@ -1,6 +1,6 @@
 from typing import Callable
 
-from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets
 import resources
 
 
@@ -20,7 +20,11 @@ def construct_subtitle(text: str) -> QtWidgets.QLabel:
     subtitle_label = QtWidgets.QLabel()
     subtitle_label.setText(text)
     subtitle_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter)
-    subtitle_label.setStyleSheet("margin-bottom: 20px; color: rgb(150, 150, 150); font-size: 12pt;")
+    subtitle_label.setStyleSheet('''margin-top: 5px; 
+                                 margin-bottom: 20px; 
+                                 color: rgb(150, 150, 150); 
+                                 font-size: 12pt;
+                                 ''')
 
     return subtitle_label
 
