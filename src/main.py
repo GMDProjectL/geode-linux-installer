@@ -10,6 +10,7 @@ from locales import i18n_get
 from welcome_page import WelcomePage
 import resources
 import installation_utils
+import swelvy_bg
 
 class MainWindow(QtWidgets.QMainWindow):
     worker_thread: installation_utils.WineInstallationThread | installation_utils.SteamInstallationThread = None
@@ -26,6 +27,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.welcome_page.install_clicked.connect(self.install_clicked)
 
         self.setCentralWidget(self.stack_widget)
+
+        self.background = swelvy_bg.SwelvyBG(self.centralWidget())
+        self.background.lower()
 
     @QtCore.Slot()
     def install_clicked(self):
@@ -87,6 +91,12 @@ class MainWindow(QtWidgets.QMainWindow):
             QtWidgets.QMessageBox.information(self, "", i18n_get('installation_successful'))
         else:
             QtWidgets.QMessageBox.critical(self, "", i18n_get('installation_failed').format(message))
+    
+    def closeEvent(self, event):
+        self.background.worker.stop()
+        self.background.workerThread.quit()
+        self.background.workerThread.wait()
+        return super().closeEvent(event)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
