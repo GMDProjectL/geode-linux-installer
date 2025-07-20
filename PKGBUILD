@@ -24,7 +24,6 @@ package() {
     mkdir -p "${UPDATER_DIST}/assets/swelve"
     mkdir -p "${pkgdir}/usr/bin"
     mkdir -p "${pkgdir}/usr/share/applications"
-    mkdir -p "${pkgdir}/usr/share/pixmaps"
 
     # Install Python source files
     install -Dm644 "$srcdir/${pkgname}/src"/*.py -t "${UPDATER_DIST}/src/"
