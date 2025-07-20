@@ -10,7 +10,7 @@ def construct_title(text: str, icon: str) -> QtWidgets.QHBoxLayout:
     title_button.setText(" " + text)
     title_button.setIcon(resources.resources[icon])
     title_button.setIconSize(QtCore.QSize(48, 48))
-    title_button.setStyleSheet("font-size: 28pt; border-radius: 5px;")
+    title_button.setStyleSheet("font-size: 28pt; border-radius: 5px; font-weight: bold;")
     title_horizontal_layout.addWidget(title_button)
 
     return title_horizontal_layout
@@ -22,8 +22,9 @@ def construct_subtitle(text: str) -> QtWidgets.QLabel:
     subtitle_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter)
     subtitle_label.setStyleSheet('''margin-top: 5px; 
                                  margin-bottom: 20px; 
-                                 color: rgb(150, 150, 150); 
+                                 color: rgb(255, 255, 255); 
                                  font-size: 12pt;
+                                 font-weight: bold;
                                  ''')
 
     return subtitle_label

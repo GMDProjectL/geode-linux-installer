@@ -36,7 +36,7 @@ class WelcomePage(QtWidgets.QWidget):
 
         disclaimer_text = QtWidgets.QLabel()
         disclaimer_text.setText(i18n_get('disclaimer'))
-        disclaimer_text.setStyleSheet("color: rgb(150, 150, 150); margin-bottom: 10px;")
+        disclaimer_text.setStyleSheet("color: rgb(190, 190, 190); margin-bottom: 10px;")
         disclaimer_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter)
         main_vertical_layout.addWidget(disclaimer_text)
 
