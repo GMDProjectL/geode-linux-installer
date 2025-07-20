@@ -5,6 +5,7 @@ from PySide6.QtCore import Qt, QEvent, QPoint, QRect
 from PySide6.QtCore import QElapsedTimer, QTimer, QObject, Signal, Slot, QThread
 
 import random
+import os
 
 class SwelvyBG(QWidget):
     layers: list[tuple[QPixmap, float, float]] = []
@@ -13,32 +14,32 @@ class SwelvyBG(QWidget):
         super().__init__(parent=parent)
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer3.png"), QColor(244, 212, 142)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer3.png"), QColor(244, 212, 142)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer0.png"), QColor(245, 174, 125)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer0.png"), QColor(245, 174, 125)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer1.png"), QColor(236, 137, 124)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer1.png"), QColor(236, 137, 124)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer2.png"), QColor(213, 105, 133)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer2.png"), QColor(213, 105, 133)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer1.png"), QColor(173, 84,  146)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer1.png"), QColor(173, 84,  146)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
 
         self.layers.append((
-            self.colorizePixmap(QPixmap("assets/swelvy/swelve-layer0.png"), QColor(113, 74,  154)),
+            self.colorizePixmap(QPixmap(os.path.dirname(__file__) + "/../assets/swelvy/swelve-layer0.png"), QColor(113, 74,  154)),
             random.choice([-1, 1]) * random.uniform(3, 9), 0
         ))
         

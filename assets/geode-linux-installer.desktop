@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Geode Linux Installer
+Comment=Bringing mod support to Geometry Dash.
+Categories=Utility;KDE;
+
+Icon=/opt/geode-linux-installer/assets/icon.png
+Exec=python /opt/geode-linux-installer/src/main.py
+Terminal=false
