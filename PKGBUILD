@@ -22,7 +22,7 @@ package() {
 
     install -Dm0644 $srcdir/${pkgname}/src/*.py -t ${UPDATER_DIST}/src/
     install -Dm0644 $srcdir/${pkgname}/locale/*.json -t ${UPDATER_DIST}/locale/
-    install -Dm0644 $srcdir/${pkgname}/assets/* -t ${UPDATER_DIST}/assets/
+    install -Dm0644 $srcdir/${pkgname}/assets/ -t ${UPDATER_DIST}
     
     install -Dm0644 $srcdir/${pkgname}/assets/geode-linux-installer.desktop -t "${pkgdir}/usr/share/applications"
 }
