@@ -32,8 +32,10 @@ package() {
     install -Dm644 "$srcdir/${pkgname}/locale"/*.json -t "${UPDATER_DIST}/locale/"
     
     # Install assets
-    install -Dm644 "$srcdir/${pkgname}/assets"/*.png -t "${UPDATER_DIST}/assets/"
-    install -Dm644 "$srcdir/${pkgname}/assets/swelve"/*.png -t "${UPDATER_DIST}/assets/swelve/"
+    cp "$srcdir/${pkgname}/assets"/*.png "${UPDATER_DIST}/assets/"
+    cp "$srcdir/${pkgname}/assets/swelve"/*.png "${UPDATER_DIST}/assets/swelve/"
+    chmod 644 "${UPDATER_DIST}/assets"/*.png
+    chmod 644 "${UPDATER_DIST}/assets/swelve"/*.png
     
     # Install desktop file
     install -Dm644 "$srcdir/${pkgname}/geode-linux-installer.desktop" -t "${pkgdir}/usr/share/applications/"
