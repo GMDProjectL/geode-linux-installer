@@ -39,10 +39,7 @@ package() {
     find "${UPDATER_DIST}/assets" -type f -exec chmod 644 {} \;
     
     # Install desktop file
-    install -Dm644 "$srcdir/${pkgname}/geode-linux-installer.desktop" -t "${pkgdir}/usr/share/applications/"
-    
-    # Install icon
-    install -Dm644 "$srcdir/${pkgname}/assets/icon.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+    install -Dm644 "$srcdir/${pkgname}/assets/geode-linux-installer.desktop" -t "${pkgdir}/usr/share/applications/"
     
     # Create executable wrapper script
     cat > "${pkgdir}/usr/bin/${pkgname}" << 'EOF'
